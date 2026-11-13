@@ -10,6 +10,7 @@ import io.github.soclear.oneuix.hook.systemui.statusbar.ESIM
 import io.github.soclear.oneuix.hook.systemui.statusbar.HideBatteryIcon
 import io.github.soclear.oneuix.hook.systemui.Notification
 import io.github.soclear.oneuix.hook.systemui.QS
+import io.github.soclear.oneuix.hook.systemui.MultiSimBar
 import io.github.soclear.oneuix.hook.systemui.statusbar.StatusBar
 import io.github.soclear.oneuix.hook.systemui.statusbar.NetWorkSpeed
 import io.github.soclear.oneuix.hook.systemui.powermenu.PowerMenu
@@ -405,6 +406,10 @@ class Main : XposedModule() {
 
                 if (preference.systemUI.qs.hideAudioEraserBanner) {
                     QS.hideAudioEraserBanner()
+                }
+
+                if (preference.systemUI.qs.resizableMultiSimBar) {
+                    MultiSimBar.resizableBar()
                 }
 
                 if (preference.systemUI.qs.turnOn5gQsTile) {

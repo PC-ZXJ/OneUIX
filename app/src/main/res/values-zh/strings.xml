@@ -259,4 +259,6 @@
     <string name="fixMyFilesNetworkStorage_summary">适用于国行系统上使用国际版“我的文件”：点击网络存储时不再跳转到应用商店更新页面。让缓存的最新版本与已安装版本保持一致</string>
     <string name="restoreLiveWallpaperEntry_title">恢复壁纸应用“\u22EE”菜单的动态壁纸入口</string>
     <string name="restoreLiveWallpaperEntry_summary">恢复三星“壁纸和风格”的“\u22EE”菜单中“动态壁纸”入口选项</string>
+    <string name="resizableMultiSimBar_title">多 SIM 卡信息栏可调整大小</string>
+    <string name="resizableMultiSimBar_summary">在快捷面板编辑模式下，可以自由调整多 SIM 卡信息栏的宽度，横竖屏均可。</string>
 </resources>

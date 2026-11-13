@@ -678,6 +678,17 @@ fun DetailPaneSystemUI(
                     }
                 )
             }
+            if (ONE_UI_VERSION >= 80500) {
+                SwitchItem(
+                    icon = ImageVector.vectorResource(id = R.drawable.tile_medium),
+                    title = stringResource(id = R.string.resizableMultiSimBar_title),
+                    summary = stringResource(id = R.string.resizableMultiSimBar_summary),
+                    checked = uiState.qs.resizableMultiSimBar,
+                    onCheckedChange = {
+                        onEvent(SystemUIEvent.QS.ResizableMultiSimBar(it))
+                    }
+                )
+            }
             if (ONE_UI_VERSION < 80500) {
                 SwitchItem(
                     icon = ImageVector.vectorResource(id = R.drawable.tile_medium),
@@ -1116,6 +1127,7 @@ sealed interface SystemUIEvent {
 
         @JvmInline
         value class HideAudioEraserBanner(val value: Boolean) : QS
+        value class ResizableMultiSimBar(val value: Boolean) : QS
 
         @JvmInline
         value class TurnOn5gQsTile(val value: Boolean) : QS
@@ -1579,6 +1591,16 @@ private fun SettingViewModel.onQSEvent(event: SystemUIEvent.QS) {
                     systemUI = preference.systemUI.copy(
                         qs = preference.systemUI.qs.copy(
                             hideAudioEraserBanner = event.value
+                        )
+                    )
+                )
+            }
+
+            is SystemUIEvent.QS.ResizableMultiSimBar -> {
+                preference.copy(
+                    systemUI = preference.systemUI.copy(
+                        qs = preference.systemUI.qs.copy(
+                            resizableMultiSimBar = event.value
                         )
                     )
                 )
