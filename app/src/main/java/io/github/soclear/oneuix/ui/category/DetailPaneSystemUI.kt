@@ -1127,6 +1127,7 @@ sealed interface SystemUIEvent {
 
         @JvmInline
         value class HideAudioEraserBanner(val value: Boolean) : QS
+        @JvmInline
         value class ResizableMultiSimBar(val value: Boolean) : QS
 
         @JvmInline
